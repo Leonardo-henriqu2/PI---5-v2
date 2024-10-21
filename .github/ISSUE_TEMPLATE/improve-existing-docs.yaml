@@ -1,12 +1,13 @@
 name: Melhorar conteúdo existente
 description: Faça uma sugestão para melhorar o conteúdo de um artigo existente.
+title: "Update Content <insira o título do conteúdo>"
 labels:
-  - conteúdo
+  - content
 body:
   - type: markdown
     attributes:
       value: |
-        Este é o repositório de código aberto promovido pela Fatec Franca Dr. Thomaz Novelino. Você pode querer abrir uma issue no repositório interno, pertencendo assim à nossa comunidade Fatec.
+        Este é um repositório de código aberto promovido pela Fatec Franca Dr. Thomaz Novelino. Você pode abrir uma issue no repositório interno, contribuindo para melhorar nossa comunidade Fatec.
 
         * Para perguntas, acesse [Fale conosco](https://site.fatecfranca.edu.br/a-fatec-franca/fale-conosco) na página oficial da faculdade.
         * Antes de abrir uma issue, leia atentamente as documentações de como o fazer ou entre em contato com a universidade.
@@ -50,3 +51,9 @@ body:
         - Adicione qualquer outro contexto ou capturas de tela sobre a funcionalidade aqui.
     validations:
       required: false
+
+  - type: markdown
+    attributes:
+      value: |
+        > [!NOTE]
+        > Este template foi baseado nos exemplos de [template do próprio GitHub](https://github.com/github/docs/tree/d771e1e021b2df6d7e088e93bdaf7fd37b02ab63/.github/ISSUE_TEMPLATE).
