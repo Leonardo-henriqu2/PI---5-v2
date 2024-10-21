@@ -1,8 +1,8 @@
-name: Melhorar conteúdo existente
+name: Contribuição de Documentação
 description: Faça uma sugestão para melhorar o conteúdo de um artigo existente.
 title: "Update Content <insira o título do conteúdo>"
 labels:
-  - content
+  - documentation
 body:
   - type: markdown
     attributes:
