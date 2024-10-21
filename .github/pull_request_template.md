@@ -6,7 +6,7 @@ Exemplo: Correção de Bug no Formulário de Usuários.
 Insentivamos que você adicione um tipo de label disponível que mais se encaixe com o tipo de pull request que você pretende fazer. Exemplo: "fix" ou "enhancement".
 -->
 
-> *"Ao enviar este pull request, afirmo que li e concordo com o **[Código de Conduta]()** deste projeto assim como as **[políticas de segurança]()**, garantindo que esta ação não apresenta potenciais perigos ao ser exposto ao público".*
+> *"Ao enviar este pull request, afirmo que li e concordo com o **[Código de Conduta](https://github.com/Leonardo-henriqu2/PI---5-v2/blob/main/CODE_OF_CONDUCT.md)** deste projeto assim como as **[políticas de segurança](https://github.com/Leonardo-henriqu2/PI---5-v2/blob/main/SECURITY.md)**, garantindo que esta ação não apresenta potenciais perigos ao ser exposto ao público".*
 
 ## Parte(s) do código manipulado(as)
 
@@ -27,7 +27,7 @@ Ao enviar este pull request, afirmo que:
 
 <!-- 
 Após completar as etapas acima, você pode abrir um pull request.
-Se tiver alguma dúvida, sinta-se à vontade para contatar os responsáveis do projeto pelo e-mail ou entrando em contato com a promotora do projeto através do link [Fale conosco]().
+Se tiver alguma dúvida, sinta-se à vontade para contatar os responsáveis do projeto pelo e-mail ou entrando em contato com a promotora do projeto através do link [Fale conosco](https://site.fatecfranca.edu.br/a-fatec-franca/fale-conosco).
 -->
 
 <!--
