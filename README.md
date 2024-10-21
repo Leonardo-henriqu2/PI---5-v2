@@ -3,13 +3,21 @@
 >
 > Você pode acompanhar o processo de desenvolvimento bem como os motivos de cada implementação na pasta [_GERENCIAMENTO](./_MENAGEMENT).
 
+<br/>
+
 # Nome do Projeto
+
+<br/>
 
 ## Sumário
 
 1. [Introdução](#introdução)
 
-***
+2. [Instalação da Aplicação](#instalação-da-aplicação)
+
+<br/>
+<br/>
+<br/>
 
 ## Introdução
 
@@ -30,3 +38,19 @@ Para mais informações sobre o Flutter, acesse as páginas oficiais:
 - [documentação online](https://docs.flutter.dev/);
 - [Receitas: Exemplos úteis de Flutter](https://docs.flutter.dev/cookbook);
 - [Laboratório: Escreva seu primeiro aplicativo Flutter](https://docs.flutter.dev/get-started/codelab).
+
+<br/>
+
+## Instalação da Aplicação
+
+Para baixar as dependências do Flutter, use o comando:
+
+```bash
+flutter pub get
+```
+
+Para executar a aplicação em um emulador, use o comando:
+
+```
+flutter run
+```
