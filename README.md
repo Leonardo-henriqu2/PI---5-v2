@@ -1,5 +1,7 @@
 > [!WARNING]
 > Projeto em andamento
+>
+> Você pode acompanhar o processo de desenvolvimento bem como os motivos de cada implementação na pasta [_GERENCIAMENTO](./_MENAGEMENT).
 
 # Nome do Projeto
 
