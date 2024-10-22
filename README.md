@@ -1,11 +1,9 @@
+# Nome do Projeto
+
 > [!WARNING]
 > Projeto em andamento
 >
-> Você pode acompanhar o processo de desenvolvimento bem como os motivos de cada implementação na pasta [_GERENCIAMENTO](./_MENAGEMENT).
-
-<br/>
-
-# Nome do Projeto
+> Você pode acompanhar o processo de desenvolvimento bem como os motivos de cada implementação na pasta [_MENAGEMENT](./_MENAGEMENT).
 
 <br/>
 
@@ -15,8 +13,6 @@
 
 2. [Instalação da Aplicação](#instalação-da-aplicação)
 
-<br/>
-<br/>
 <br/>
 
 ## Introdução
@@ -43,7 +39,7 @@ Para mais informações sobre o Flutter, acesse as páginas oficiais:
 
 ## Instalação da Aplicação
 
-Para baixar as dependências do Flutter, use o comando:
+Para baixar as dependências da aplicação, use o comando:
 
 ```bash
 flutter pub get
