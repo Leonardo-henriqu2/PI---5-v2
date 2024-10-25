@@ -1,9 +1,11 @@
-# Nome do Projeto
+# CarAvalia
 
 > [!WARNING]
 > Projeto em andamento
 >
 > Você pode acompanhar o processo de desenvolvimento bem como os motivos de cada implementação na pasta [_MENAGEMENT](./_MENAGEMENT).
+
+**CarAvalia** é um aplicativo inteligente que ajuda os usuários a decidir se vale a pena comprar um determinado veículo. Com base nas informações fornecidas pelo usuário que indentificam o véiculo, o CarAvalia analisa uma variedade de fatores, como preço, custos de manutenção, quantidade de portas, tamanho de porta-malas e espaço para passageiros. O aplicativo gera uma avaliação personalizada, auxiliando o usuário a fazer uma escolha informada e segura na hora de adquirir seu veículo.
 
 <br/>
 
@@ -27,7 +29,7 @@ Para mais informações:
 - [Página oficial Fatec Franca Dr. Thomaz Novelino](https://site.fatecfranca.edu.br/)
 - [Projeto pedagógico do curso Desenvolvimento de Software Multiplataforma](https://site.fatecfranca.edu.br/cursos/dsm/projeto-pedagogico)
 
-Este projeto é baseado quase que inteiramente em **Flutter**, um framework desenvolvido pelo Google que utiliza a linguagem de programação Dart.
+Este projeto é baseado quase que inteiramente em **[Flutter](https://flutter.dev/)**, um framework desenvolvido pelo Google que utiliza a linguagem de programação Dart.
 
 Para mais informações sobre o Flutter, acesse as páginas oficiais:
 
@@ -35,7 +37,7 @@ Para mais informações sobre o Flutter, acesse as páginas oficiais:
 - [Receitas: Exemplos úteis de Flutter](https://docs.flutter.dev/cookbook);
 - [Laboratório: Escreva seu primeiro aplicativo Flutter](https://docs.flutter.dev/get-started/codelab).
 
-A linguagem de progamação utilizada para desenvolver os algoritmos de aprendizagem de máquina é [Python](https://www.python.org/). Uma linguagem de programação de alto nível.
+A linguagem de progamação utilizada para desenvolver os algoritmos de aprendizagem de máquina é **[Python](https://www.python.org/)**. Uma linguagem de programação de alto nível.
 
 Caso interessado, você pode encontrar mais sobre essa linguagem nas páginas oficiais:
 
