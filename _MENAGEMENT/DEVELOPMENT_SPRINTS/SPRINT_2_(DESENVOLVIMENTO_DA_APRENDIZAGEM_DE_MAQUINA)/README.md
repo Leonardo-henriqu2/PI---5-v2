@@ -89,6 +89,29 @@ Os Rótulos de Classe são escritos da seguinte maneira:
 
 Os atributos de entrada estão escritos em minúsculas. Além do conceito alvo (CAR), o modelo inclui três conceitos intermediários: PRICE, TECH, e COMFORT. Cada conceito no modelo original está relacionado aos seus descendentes de nível inferior por um conjunto de exemplos. O Car Evaluation Database contém exemplos com a informação estrutural removida, ou seja, relaciona diretamente CAR aos seis atributos de entrada: buying, maint, doors, persons, lug_boot, safety.
 
+Para uma visualização mais clara da estrura dos dados, imagine a seguinte tabela:
+
+|     | buying | maint | doors | persons | lug_boot | safety | class | 
+|-----|--------|-------|-------|---------|----------|--------|-------|
+| Car | vhigh  | vhigh |   2   |    2    |  small   |   low  | unacc |
+
+> [!NOTE]
+> Baseado no arquivo [car.arff](./car.arff)
+> ```
+> @relation car
+>
+> @attribute buying {vhigh,high,med,low}
+> @attribute maint {vhigh,high,med,low}
+> @attribute doors {2,3,4,5more}
+> @attribute persons {2,4,more}
+> @attribute lug_boot {small,med,big}
+> @attribute safety {low,med,high}
+> @attribute class {unacc,acc,good,vgood}
+> 
+> @data
+> vhigh,vhigh,2,2,small,low,unacc
+> ```
+
 <br/>
 
 ## Sobre os Algoritmos
@@ -107,9 +130,9 @@ Os três são bem diferentes e serão considerados como possíveis candidatos pa
 
 ## Código de Desenvolvimnto
 
-A linguagem de progamação que será utilizada é [Python](https://www.python.org/).
+A linguagem de programação que será utilizada é [Python](https://www.python.org/).
 
-Caso interessado, você pode encontrar mais sobe essa linguagem nas páginas oficiais:
+Caso interessado, você pode encontrar mais sobre essa linguagem nas páginas oficiais:
 
 - [Documentação](https://www.python.org/doc/)
 - [Guia do Desenvolvedor](https://devguide.python.org/)
