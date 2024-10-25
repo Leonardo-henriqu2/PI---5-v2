@@ -15,11 +15,14 @@
 2. [Características do Conjunto de Dados](#características-do-conjunto-de-dados)
 
 3. [Sobre os Algoritmos](#sobre-os-algoritmos)
+
+4. [Código de Desenvolvimnto](#código-de-desenvolvimnto)
+
 <br/>
 
 ## Introdução
 
-Muito das escolhas do consceito do projeto, o dataset para a aprendizagem de máquina e os algoritmos para efetuar o seu treinamento, provem do estudo didático do repositório [dataset_exploration](https://github.com/AelMartins/dataset_exploration) que utiliza o dataset [Car Evaluation](https://archive.ics.uci.edu/dataset/19/car+evaluation) disponibilizado pela página [UC Irvine Machine Learning Repository](http://archive.ics.uci.edu/).
+Muito das escolhas do consceito do projeto, o dataset para a aprendizagem de máquina e os algoritmos para efetuar o seu treinamento, provem do estudo didático do repositório [dataset_exploration](https://github.com/AelMartins/dataset_exploration) que utiliza o dataset [Car Evaluation](https://archive.ics.uci.edu/dataset/19/car+evaluation) disponibilizado pela página [UC Irvine Machine Learning Repository](http://archive.ics.uci.edu/) que se encontra na raiz desta pasta com o nome [car.arff](./car.arff).
 
 <br/>
 
@@ -99,3 +102,17 @@ Ainda se baseando nas pesquisas do repositório, aqueles que obtiveram o melhor 
 3. **PART**. Com 95.77% de acertos.
 
 Os três são bem diferentes e serão considerados como possíveis candidatos para serem o algoritmo de nossa inteligência, dependendo da complexidade.
+
+<br/>
+
+## Código de Desenvolvimnto
+
+A linguagem de progamação que será utilizada é [Python](https://www.python.org/).
+
+Caso interessado, você pode encontrar mais sobe essa linguagem nas páginas oficiais:
+
+- [Documentação](https://www.python.org/doc/)
+- [Guia do Desenvolvedor](https://devguide.python.org/)
+- [Guia para Iniciantes](https://wiki.python.org/moin/BeginnersGuide)
+
+Os tópicos e exemplos de código que devemos aplicar em  nossa aplicação se encontram no aquivo: [pre_processamento.ipynb](./pre_processamento.ipynb) 
