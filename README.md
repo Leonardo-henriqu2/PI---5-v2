@@ -35,6 +35,14 @@ Para mais informações sobre o Flutter, acesse as páginas oficiais:
 - [Receitas: Exemplos úteis de Flutter](https://docs.flutter.dev/cookbook);
 - [Laboratório: Escreva seu primeiro aplicativo Flutter](https://docs.flutter.dev/get-started/codelab).
 
+A linguagem de progamação utilizada para desenvolver os algoritmos de aprendizagem de máquina é [Python](https://www.python.org/). Uma linguagem de programação de alto nível.
+
+Caso interessado, você pode encontrar mais sobre essa linguagem nas páginas oficiais:
+
+- [Documentação online](https://www.python.org/doc/);
+- [Guia do Desenvolvedor](https://devguide.python.org/);
+- [Guia para Iniciantes](https://wiki.python.org/moin/BeginnersGuide).
+
 <br/>
 
 ## Instalação da Aplicação
