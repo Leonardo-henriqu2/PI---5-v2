@@ -104,6 +104,8 @@ PI--5-V2/
 │   └── machine-learning/
 │       ├── data/                           # Diretório para armazenar os dados
 │       │   └── car.arff                    # Dataset de treinamento
+│       ├── notebooks/                      # Diretório para armazenar análises
+│       │   └── data_exploration.ipynb      # Jupyter notebook
 │       ├── static/                         # Diretório para armazenar arquivos estáticos
 │       |   └── styles.css                  # Arquivo de estilo
 │       ├── templates/                      # Diretório para armazenar arquivos HTML
@@ -112,8 +114,6 @@ PI--5-V2/
 │       ├── app.py                          # Inicializador do servidor Python
 │       ├── README.md                       # Documentação do projeto
 │       ├── requirements.txt                # Dependências do projeto
-│       ├── notebooks/                      # Diretório para armazenar análises
-│       │   └── data_exploration.ipynb      # Exemplo de jupyter notebook
 │       ├── src/                            # Diretório para armazenar o código fonte
 │       │   ├── __init__.py                 # Define o diretório src como um pacote
 │       │   ├── data_preprocessing.py       # Código para pré-processamento dos dados
@@ -122,3 +122,22 @@ PI--5-V2/
 │       └── reports/                        # Diretório para armazenar relatórios
 │           └── report.txt                  # Relatório de resultados
 ```
+
+## data_exploration.ipynb
+
+O data_exploration.ipynb é um Jupyter Notebook que serve para a exploração inicial e análise do dataset. Ele pode ajudar a entender melhor os dados e preparar um caminho mais sólido para o desenvolvimento do modelo de aprendizado de máquina. Aqui estão alguns dos principais objetivos e benefícios de utilizá-lo:
+
+- **Análise Visual**: Permite criar gráficos e visualizações dos dados, o que ajuda a entender padrões, tendências e anomalias.
+
+- **Pré-processamento de Dados**: É possível experimentar diferentes técnicas de limpeza, transformação e preparação dos dados, como tratamento de valores ausentes ou normalização.
+
+- **Estatísticas Descritivas**: Facilita a obtenção de estatísticas básicas (média, mediana, desvio padrão, etc.), que podem ser úteis para entender a distribuição dos dados.
+
+- **Seleção de Recursos**: Ajuda a identificar quais atributos (features) são mais relevantes para o seu modelo, potencialmente melhorando a performance do algoritmo.
+
+- **Documentação**: O formato de notebook permite que você documente seu processo de exploração, mantendo notas e explicações junto com o código e as visualizações, o que é útil para revisões ou compartilhamento.
+
+- **Interatividade**: Jupyter Notebooks permitem executar células de código de forma interativa, facilitando experimentações rápidas.
+
+> [!NOTE]
+> Todas as dependencias necessárias para carregar o Jupyter Notebook já estão registradas no ambiente virtual do Python.
