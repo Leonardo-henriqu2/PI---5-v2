@@ -56,3 +56,40 @@ pip install -r requirements.txt
 ```bash
 deactivate
 ```
+
+- Para executar o servidor Python:
+
+```bash
+python app.py
+```
+
+- Ele estará rodando em http://127.0.0.1:5000
+
+> [!NOTE]
+> É possível qua a aplicação não reconheça os imports do código devido a configurações do interpretador Python do VS Code.
+>
+> - Para solucionar esse problema, acesse as configurações do VS Code (Settings) e as abra em formato JSON (Open Settings (JSON))
+>
+> - Adicione o seguinte script baseado no caminho para o seu ambiente virtual:
+>
+> ```json
+> {
+>     // Outras configurações...
+>    
+>     // Para Windows
+>     "python.pythonPath": "caminho/para/seu/venv/Scripts/python.exe",
+>
+>     // Para Linux
+>     // "python.pythonPath": "caminho/para/seu/venv/bin/python",
+>
+>     // Caminho para o diretório pai do seu ambiente virtual. No caso "machine-learning"
+>     "python.venvPath": "caminho/para/seu/venv"
+> }
+> ```
+>
+> - Salve as alterações e reinicie o VS Code
+>
+> - Com o atalho `Ctrl` + `Shift` + `p`, altere o interpretador Python para o seu ambiente virtual.
+
+> [!WARNING]
+> Esse é um servidor de desenvolvimento, não o utilize em um ambiente de produção.
