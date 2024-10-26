@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ML API: 200</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="icon-content">
+            <h1>Running</h1>
+            <img src="https://img.icons8.com/ios-filled/50/4CAF50/checkmark.png" class="icon" alt="Success Icon"/>
+        </div>
+        <h1>Welcome to the Machine Learning API!</h1>
+        <p>Your API is successfully running on port: {{ PORT }}</p>
+        <p>Use the Flutter project to send data for predictions.</p>
+        <p>For more information, check the API documentation.</p>
+    </div>
+</body>
+</html>

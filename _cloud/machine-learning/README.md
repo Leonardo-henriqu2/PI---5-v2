@@ -93,3 +93,32 @@ python app.py
 
 > [!WARNING]
 > Esse é um servidor de desenvolvimento, não o utilize em um ambiente de produção.
+
+<br/>
+
+# Estrutura
+
+```
+PI--5-V2/
+├── _cloud/
+│   └── machine-learning/
+│       ├── static/                         # Diretório para armazenar arquivos estáticos
+│       |   └── styles.css                  # Arquivo de estilo
+│       ├── templates/                      # Diretório para armazenar arquivos HTML
+│       |   └── home.html                   # Página inicial do servidor
+│       ├── venv/                           # Ambiente virtual
+│       ├── app.py                          # Inicializador do servidor Python
+│       ├── requirements.txt                # Dependências do projeto
+│       ├── README.md                       # Documentação do projeto
+│       ├── data/                           # Diretório para armazenar os dados
+│       │   └── dataset.arff                # Arquivo de dados de treinamento
+│       ├── notebooks/                      # Diretório para armazenar análises
+│       │   └── data_exploration.ipynb      # Exemplo de jupyter notebook
+│       ├── src/                            # Diretório para armazenar o código fonte
+│       │   ├── __init__.py                 # Define o diretório src como um pacote
+│       │   ├── data_preprocessing.py       # Código para pré-processamento dos dados
+│       │   ├── model.py                    # Código para definir e treinar o modelo
+│       │   └── main.py                     # Ponto de entrada para o aplicativo
+│       └── reports/                        # Diretório para armazenar relatórios
+│           └── report.txt                  # Relatório de resultados
+```
