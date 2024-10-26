@@ -102,16 +102,16 @@ python app.py
 PI--5-V2/
 ├── _cloud/
 │   └── machine-learning/
+│       ├── data/                           # Diretório para armazenar os dados
+│       │   └── car.arff                    # Dataset de treinamento
 │       ├── static/                         # Diretório para armazenar arquivos estáticos
 │       |   └── styles.css                  # Arquivo de estilo
 │       ├── templates/                      # Diretório para armazenar arquivos HTML
 │       |   └── home.html                   # Página inicial do servidor
 │       ├── venv/                           # Ambiente virtual
 │       ├── app.py                          # Inicializador do servidor Python
-│       ├── requirements.txt                # Dependências do projeto
 │       ├── README.md                       # Documentação do projeto
-│       ├── data/                           # Diretório para armazenar os dados
-│       │   └── dataset.arff                # Arquivo de dados de treinamento
+│       ├── requirements.txt                # Dependências do projeto
 │       ├── notebooks/                      # Diretório para armazenar análises
 │       │   └── data_exploration.ipynb      # Exemplo de jupyter notebook
 │       ├── src/                            # Diretório para armazenar o código fonte
