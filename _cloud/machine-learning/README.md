@@ -106,6 +106,11 @@ PI--5-V2/
 │       │   └── car.arff                    # Dataset de treinamento
 │       ├── notebooks/                      # Diretório para armazenar análises
 │       │   └── data_exploration.ipynb      # Jupyter notebook
+│       ├── src/                            # Diretório para armazenar o código fonte
+│       │   ├── __init__.py                 # Define o diretório src como um pacote
+│       │   ├── data_preprocessing.py       # Código para pré-processamento dos dados
+│       │   ├── model.py                    # Código para definir e treinar o modelo
+│       │   └── main.py                     # Ponto de entrada para o aplicativo
 │       ├── static/                         # Diretório para armazenar arquivos estáticos
 │       |   └── styles.css                  # Arquivo de estilo
 │       ├── templates/                      # Diretório para armazenar arquivos HTML
@@ -114,28 +119,23 @@ PI--5-V2/
 │       ├── app.py                          # Inicializador do servidor Python
 │       ├── README.md                       # Documentação do projeto
 │       ├── requirements.txt                # Dependências do projeto
-│       ├── src/                            # Diretório para armazenar o código fonte
-│       │   ├── __init__.py                 # Define o diretório src como um pacote
-│       │   ├── data_preprocessing.py       # Código para pré-processamento dos dados
-│       │   ├── model.py                    # Código para definir e treinar o modelo
-│       │   └── main.py                     # Ponto de entrada para o aplicativo
 │       └── reports/                        # Diretório para armazenar relatórios
 │           └── report.txt                  # Relatório de resultados
 ```
 
 ## data_exploration.ipynb
 
-O data_exploration.ipynb é um Jupyter Notebook que serve para a exploração inicial e análise do dataset. Ele pode ajudar a entender melhor os dados e preparar um caminho mais sólido para o desenvolvimento do modelo de aprendizado de máquina. Aqui estão alguns dos principais objetivos e benefícios de utilizá-lo:
+O data_exploration.ipynb é um Jupyter Notebook que serve para a exploração inicial e análise do dataset. Ele ajuda a entender melhor os dados e preparar um caminho mais sólido para o desenvolvimento do modelo de aprendizado de máquina. Nele temos:
 
-- **Análise Visual**: Permite criar gráficos e visualizações dos dados, o que ajuda a entender padrões, tendências e anomalias.
+- **Análise Visual**: Com gráficos e visualizações dos dados, o que ajuda a entender padrões, tendências e anomalias.
 
-- **Pré-processamento de Dados**: É possível experimentar diferentes técnicas de limpeza, transformação e preparação dos dados, como tratamento de valores ausentes ou normalização.
+- **Pré-processamento de Dados**: Experimentamos diferentes técnicas de limpeza, transformação e preparação dos dados, como tratamento de valores ausentes e normalização.
 
-- **Estatísticas Descritivas**: Facilita a obtenção de estatísticas básicas (média, mediana, desvio padrão, etc.), que podem ser úteis para entender a distribuição dos dados.
+- **Estatísticas Descritivas**: Obtemos estatísticas básicas (como média, mediana, desvio padrão, etc.), que foram úteis para entender a distribuição dos dados.
 
-- **Seleção de Recursos**: Ajuda a identificar quais atributos (features) são mais relevantes para o seu modelo, potencialmente melhorando a performance do algoritmo.
+- **Seleção de Recursos**: Indentificamos quais atributos (features) são mais relevantes o modelo, potencialmente melhorando a performance do algoritmo.
 
-- **Documentação**: O formato de notebook permite que você documente seu processo de exploração, mantendo notas e explicações junto com o código e as visualizações, o que é útil para revisões ou compartilhamento.
+- **Documentação**: Documentamos o processo de exploração, mantendo notas e explicações junto com o código e as visualizações, sendo útil para revisões e compartilhamento.
 
 - **Interatividade**: Jupyter Notebooks permitem executar células de código de forma interativa, facilitando experimentações rápidas.
 
