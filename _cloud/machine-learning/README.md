@@ -189,3 +189,13 @@ Para obter uma predição do algoritmo, basta enviar para o link http://localhos
     "safety": "high"
 }
 ```
+
+A resposta será:
+
+```json
+Response data: {
+  "prediction": [
+    "acc"
+  ]
+}
+```

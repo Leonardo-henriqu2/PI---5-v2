@@ -10,6 +10,10 @@ from imblearn.under_sampling import RandomUnderSampler
 """
 def common_preprocessing(df):
     print('Normalizing data...\n')
+
+    # Remover o prefixo b' das strings
+    df = df.map(lambda x: x.decode('utf-8') if isinstance(x, bytes) else x)
+
     df_encoded = pd.get_dummies(df, columns=['buying', 'maint', 'doors', 'persons', 'lug_boot', 'safety'], drop_first=False)
 
     # Convertendo valores booleanos para inteiros
@@ -81,11 +85,24 @@ def load_and_preprocess_data(filepath):
 def process_json(data):
     print('Starting data preprocessing from JSON...\n')
 
+    # Lista de colunas esperadas
+    EXPECTED_COLUMNS = [
+        'buying_high', 'buying_low', 'buying_med', 'buying_vhigh',
+        'maint_high', 'maint_low', 'maint_med', 'maint_vhigh',
+        'doors_2', 'doors_3', 'doors_4', 'doors_5more',
+        'persons_2', 'persons_4', 'persons_more',
+        'lug_boot_big', 'lug_boot_med', 'lug_boot_small',
+        'safety_high', 'safety_low', 'safety_med'
+    ]
+
     # Convertendo o JSON para DataFrame
     df = pd.DataFrame([data])
 
     # Aplicando o pré-processamento comum
     df_encoded = common_preprocessing(df)
+
+    # Garantindo que apenas as colunas esperadas sejam retornadas
+    df_encoded = df_encoded.reindex(columns=EXPECTED_COLUMNS, fill_value=0)
 
     # Por simplicidade, retornamos o DataFrame codificado
     print('Preprocessing from JSON finished.\n')
