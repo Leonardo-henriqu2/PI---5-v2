@@ -118,9 +118,7 @@ PI--5-V2/
 │       ├── venv/                           # Ambiente virtual
 │       ├── app.py                          # Inicia o servidor Python e define as portas
 │       ├── README.md                       # Documentação do projeto
-│       ├── requirements.txt                # Dependências do projeto
-│       └── reports/                        # Diretório para armazenar relatórios
-│           └── report.txt                  # Relatório de resultados
+│       └── requirements.txt                # Dependências do projeto
 ```
 
 ## data_exploration.ipynb
@@ -171,7 +169,7 @@ acc | good | unacc | vgood |              |
  5  |  8   |   0   |  264  | **\| vgood** |
 
 > [!NOTE]
-> Os parâmetros que foram definidos no treinamento são armazenados no mlp_model.pkl
+> Os parâmetros que foram definidos no treinamento do modelo são armazenados no mlp_model.pkl
 
 ## app.py
 
@@ -193,7 +191,7 @@ Para obter uma predição do algoritmo, basta enviar para o link http://localhos
 A resposta será:
 
 ```json
-Response data: {
+{
   "prediction": [
     "acc"
   ]
