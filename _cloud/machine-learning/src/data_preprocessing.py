@@ -63,7 +63,6 @@ def load_and_preprocess_data(filepath):
 
     # Mensagem de finalização de pré-processamento
     print('Preprocessing finished.\n')
-    print('Data visualization after preprocessing:\n', df_cleaned.head())
 
     return df_cleaned
 

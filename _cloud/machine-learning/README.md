@@ -109,6 +109,7 @@ PI--5-V2/
 │       ├── src/                            # Diretório para armazenar o código fonte
 │       │   ├── __init__.py                 # Define o diretório src como um pacote
 │       │   ├── data_preprocessing.py       # Código para pré-processamento dos dados
+│       │   ├── mlp_model.pkl               # Parâmetros do modelo treinado em model.py
 │       │   ├── model.py                    # Código para definir e treinar o modelo
 │       │   └── main.py                     # Ponto de entrada para o aplicativo
 │       ├── static/                         # Diretório para armazenar arquivos estáticos
@@ -141,3 +142,31 @@ O data_exploration.ipynb é um Jupyter Notebook que serve para a exploração in
 
 > [!NOTE]
 > Todas as dependencias necessárias para carregar o Jupyter Notebook já estão registradas no ambiente virtual do Python.
+
+<br/>
+
+## data_preprocessing.py
+
+Este arquivo efetua o processamento analizado em data_exploration.ipynb para normalizar os dados, corrigindo discrepancias.
+
+<br/>
+
+## model.py
+
+Efetua o treinamento com os dados obtidos no data_preprocessing.py e as configurações de **MLPClassifier** como:
+
+- Camadas ocultas               = (13, 9)
+- Learning Rate                 = 0.09
+- Training Time                 = 500
+- e valor de aleatoridade fixo  = 42
+
+A acurácia atingiu 98.03% dos dados totais e 100% acertos para a classe acc (Aceitável).
+
+**Matriz de Confusão**
+
+acc | good | unacc | vgood |              |
+----|------|-------|-------|--------------|
+237 |  0   |   0   |   0   | **\| acc**   |
+ 5  | 230  |   0   |   0   | **\| good**  |
+ 2  |  0   |  269  |   0   | **\| unacc** |
+ 5  |  8   |   0   |  264  | **\| vgood** |
