@@ -31,6 +31,12 @@ migrate_working_dir/
 .pub/
 /build/
 
+# Python related
+venv/
+__pycache__/
+*.pyo
+*.pyd
+
 # Symbolication related
 app.*.symbols
 
@@ -41,3 +47,16 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# System specific
+Thumbs.db
+
+# Test related
+.coverage
+nosetests.xml
+coverage.xml
+*.cover
+
+# Temporary files
+*.tmp
+*.temp
