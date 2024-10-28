@@ -4,9 +4,26 @@ from scipy.io import arff
 from imblearn.over_sampling import SMOTE
 from imblearn.under_sampling import RandomUnderSampler
 
+"""
+   Função auxiliar para normalizar dados e 
+   aplicar one-hot encoding.
+"""
+def common_preprocessing(df):
+    print('Normalizing data...\n')
+    df_encoded = pd.get_dummies(df, columns=['buying', 'maint', 'doors', 'persons', 'lug_boot', 'safety'], drop_first=False)
+
+    # Convertendo valores booleanos para inteiros
+    numeric_columns = df_encoded.select_dtypes(include=[bool]).columns
+    df_encoded[numeric_columns] = df_encoded[numeric_columns].astype(int)
+
+    return df_encoded
+
+"""
+   Carrega e processa dados de um arquivo 
+   .arff para treinamento.
+"""
 def load_and_preprocess_data(filepath):
-    # Imprime mensagem de inicialização de pré-processamento
-    print('Starting data preprocessing...\n')
+    print('Starting data preprocessing from .arff file...\n')
 
     # Carregando o dataset .arff
     print('Loading data from:', filepath)
@@ -16,18 +33,11 @@ def load_and_preprocess_data(filepath):
     print('Converting data to DataFrame...\n')
     df = pd.DataFrame(data[0])
 
-    # Aplicando one-hot encoding para normalizar os dados
-    print('Normalizing data...\n')
-    df_encoded = pd.get_dummies(df, columns=['buying', 'maint', 'doors', 'persons', 'lug_boot', 'safety'], drop_first=False)
-
-    # Convertendo valores booleanos para inteiros
-    numeric_columns = df_encoded.select_dtypes(include=[bool]).columns
-    df_encoded[numeric_columns] = df_encoded[numeric_columns].astype(int)
+    # Aplicando o pré-processamento comum
+    df_encoded = common_preprocessing(df)
 
     # Separando características e classes
     X = df_encoded.drop('class', axis=1)
-
-    # Convertendo rótulos de classe para string
     y = df_encoded['class'].astype(str)
 
     # Oversampling utilizando SMOTE
@@ -51,7 +61,7 @@ def load_and_preprocess_data(filepath):
     valid_columns_resampled = (X_resampled[numeric_columns_resampled].sum() <= threshold_resampled)
     valid_columns_under = (X_under[numeric_columns_under].sum() <= threshold_under)
 
-    # Filtra DataFrame pára manter apenas colunas válidas
+    # Filtra DataFrame para manter apenas colunas válidas
     df_cleaned_resampled = pd.DataFrame(X_resampled.loc[:, valid_columns_resampled[valid_columns_resampled].index])
     df_cleaned_resampled['class'] = y_resampled
 
@@ -61,10 +71,25 @@ def load_and_preprocess_data(filepath):
     # Combina os dois datasets limpos em um único DataFrame
     df_cleaned = pd.concat([df_cleaned_resampled, df_cleaned_under], ignore_index=True)
 
-    # Mensagem de finalização de pré-processamento
-    print('Preprocessing finished.\n')
-
+    print('Preprocessing from .arff file finished.\n')
     return df_cleaned
+
+"""
+   Processa dados recebidos em 
+   formato JSON.
+"""
+def process_json(data):
+    print('Starting data preprocessing from JSON...\n')
+
+    # Convertendo o JSON para DataFrame
+    df = pd.DataFrame([data])
+
+    # Aplicando o pré-processamento comum
+    df_encoded = common_preprocessing(df)
+
+    # Por simplicidade, retornamos o DataFrame codificado
+    print('Preprocessing from JSON finished.\n')
+    return df_encoded
 
 if __name__ == "__main__":
     cleaned_data = load_and_preprocess_data('../data/car.arff')

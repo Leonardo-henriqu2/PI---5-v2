@@ -110,14 +110,13 @@ PI--5-V2/
 │       │   ├── __init__.py                 # Define o diretório src como um pacote
 │       │   ├── data_preprocessing.py       # Código para pré-processamento dos dados
 │       │   ├── mlp_model.pkl               # Parâmetros do modelo treinado em model.py
-│       │   ├── model.py                    # Código para definir e treinar o modelo
-│       │   └── main.py                     # Ponto de entrada para o aplicativo
+│       │   └── model.py                    # Código para definir e treinar o modelo
 │       ├── static/                         # Diretório para armazenar arquivos estáticos
 │       |   └── styles.css                  # Arquivo de estilo
 │       ├── templates/                      # Diretório para armazenar arquivos HTML
 │       |   └── home.html                   # Página inicial do servidor
 │       ├── venv/                           # Ambiente virtual
-│       ├── app.py                          # Inicializador do servidor Python
+│       ├── app.py                          # Inicia o servidor Python e define as portas
 │       ├── README.md                       # Documentação do projeto
 │       ├── requirements.txt                # Dependências do projeto
 │       └── reports/                        # Diretório para armazenar relatórios
@@ -147,7 +146,7 @@ O data_exploration.ipynb é um Jupyter Notebook que serve para a exploração in
 
 ## data_preprocessing.py
 
-Este arquivo efetua o processamento analizado em data_exploration.ipynb para normalizar os dados, corrigindo discrepancias.
+Este arquivo efetua o processamento analizado em data_exploration.ipynb para normalizar os dados e corrigir discrepâncias.
 
 <br/>
 
@@ -170,3 +169,23 @@ acc | good | unacc | vgood |              |
  5  | 230  |   0   |   0   | **\| good**  |
  2  |  0   |  269  |   0   | **\| unacc** |
  5  |  8   |   0   |  264  | **\| vgood** |
+
+> [!NOTE]
+> Os parâmetros que foram definidos no treinamento são armazenados no mlp_model.pkl
+
+## app.py
+
+O arquivo inicia o servidor Python e abre as portas para interagir com o algoritmo.
+
+Para obter uma predição do algoritmo, basta enviar para o link http://localhost:5000/predict um JSON como:
+
+```json
+{
+    "buying": "vhigh",
+    "maint": "low",
+    "doors": "4",
+    "persons": "more",
+    "lug_boot": "big",
+    "safety": "high"
+}
+```
