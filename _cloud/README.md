@@ -24,7 +24,7 @@
 
    3.1. [Requisitos](#requisitos)
 
-   3.2. [Processo de Criação](#processo-de-criação)
+   3.2. [Processo de Criação da Máquina Virtual](#processo-de-criação-da-máquina-virtual)
 
 <br/>
 
@@ -94,9 +94,70 @@ Para mais,
 
 ### Requisitos
 
+- Assinatura Azure
 
+- Créditos para manter o servidor ativo
 
 <br/>
 
-### Processo de Criação
+### Processo de Criação da Máquina Virtual
+
+1. Acessamos a plataforma e, na opção **Grupos de Recursos**, selecionamos **Criar** com os seguintes dados:
+
+   - Grupo de recursos: maquinas-virtuais
+
+   - Região: (US) East US 2
+
+3. Coltamos à página inicial e selecionamos **Criar um Recurso**:
+
+   - Buscamos pela VM **Ubuntu Server 22.04 LTS** e selecionamos a opção criar
+     
+   - No campo Grupo de recursos, selecionamos o grupo que haviamos criado anteriormente
+
+   - Nome da máquina virtual: projeto-integrador
+
+   - A região é a mesma do grupo criado anteriormente
+
+   - Opções de disponibilidade: Zona de disponibilidade
+
+   - Opções de zona: Zona selecionada pelo Azure (versão prévia)
+
+   - Tipo de segurança: Padrão
+
+   - Imagem: Ubuntu Server 22.04 LTS - x64 GenZ
+
+   - Arquitetura da VM: x64
+
+   - Tamanho: Standard_B1s - 1 vcpu, 1 GiB memória (US$ 7,59/mês) (serviços gratuitos qualificados)
+
+   - Tipo de autenticação: Senha
+
+   - Definimos um nome de usuário, uma senha e confirmamos a senha
+
+   - Nas Regras de porta de entrada, selecionamos todas as opões: HTTP(80), HTTPS(443) e SSH(22)
+
+5. Selecionamos Avançar: Discos e não alteramos nada.
+
+6. Selecionamos Avançar: Redes:
+
+   - Em Rede virtual selecionamos a disponível: projeto-integrador-vnet
+
+   - Sub-Red: Default
+
+   - Ip público, selecionamos criar um novo: projeto-integrador-ip
+
+   - Grupo de segurança de rede do adaptador de rede: Básico
+
+   - Selecione as portas de entrada, selecionamos todas as opões: HTTP(80), HTTPS(443) e SSH(22)
+
+   - Marcamos a opção Excluir a NIC quando a VM for excluída
+
+   - Opções de balanceamento de carga: Nenhum
+  
+8. Selecionamos a opção Revisar + criar.
+
+9. E selecionamos Criar.
+
+> [!Note]
+> Caso apareça algum problema na revisão relacionado à Guia Básico. Volte nesta guia e clique novamente em Reviar + criar.
 
