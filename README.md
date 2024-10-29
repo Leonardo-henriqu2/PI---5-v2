@@ -45,6 +45,8 @@ Caso interessado, você pode encontrar mais sobre essa linguagem nas páginas of
 - [Guia do Desenvolvedor](https://devguide.python.org/);
 - [Guia para Iniciantes](https://wiki.python.org/moin/BeginnersGuide).
 
+Para mais informações sobre o desenvolvimento do algoritmo, acesse [_cloud/machine-learning/README.md](https://github.com/Leonardo-henriqu2/PI---5-v2/blob/main/_cloud/machine-learning/README.md).
+
 <br/>
 
 ## Instalação da Aplicação
@@ -60,3 +62,5 @@ Para executar a aplicação em um emulador, use o comando:
 ```
 flutter run
 ```
+
+Para a inicialização do servidor local de Python e utilização do algoritmo de predição, siga as instruções de [_cloud/machine-learning/README.md](https://github.com/Leonardo-henriqu2/PI---5-v2/blob/main/_cloud/machine-learning/README.md).
