@@ -14,7 +14,6 @@ model = load('./src/mlp_model.pkl')
 def predict():
     # Obter os dados do corpo da requisição
     data = request.get_json()
-    print(data)
 
     # Verificar se os dados são um dicionário (JSON)
     if isinstance(data, dict):
@@ -24,10 +23,6 @@ def predict():
         
         # Processa os dados recebidos
         processed_data = process_json(data)
-        print("Model type:", type(model))  # Verifica o tipo do modelo
-
-        print("Processed data shape:", processed_data.shape)
-        print("Processed data columns:", processed_data.columns)
 
         # Verifique se a forma é (1, n) onde n é o número de características
         if processed_data.shape[0] != 1:
@@ -36,23 +31,14 @@ def predict():
     else:
         return jsonify({"error": "Invalid data format. Expected JSON."}), 400
 
-    # try:
-    #     # Fazer a previsão
-    #     prediction = model.predict(processed_data)
-    #     print(prediction)
+    try:
+        # Fazer a previsão
+        prediction = model.predict(processed_data)
 
-    #     # Retornar a previsão como resposta
-    #     return jsonify({'prediction': prediction.tolist()})
-    # except Exception as e:
-    #     return jsonify({"error": str(e)}), 500
-    
-    # Fazer a previsão
-    prediction = model.predict(processed_data)
-    print(prediction)
-        
-    # Retornar a previsão como resposta
-    return jsonify({'prediction': prediction.tolist()})
-
+        # Retornar a previsão como resposta
+        return jsonify({'prediction': prediction.tolist()})
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
 if __name__ == '__main__':
     PORT = 5000
