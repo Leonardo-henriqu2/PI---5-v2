@@ -26,6 +26,8 @@
 
    3.2. [Processo de Criação da Máquina Virtual](#processo-de-criação-da-máquina-virtual)
 
+   3.3. [Processo de Criação do Banco de Dados](#processo-de-criação-do-banco-de-dados)
+
 <br/>
 
 ## Introdução
@@ -161,3 +163,194 @@ Para mais,
 > [!Note]
 > Caso apareça algum problema na revisão relacionado à Guia Básico. Volte nesta guia e clique novamente em Reviar + criar.
 
+Isso finaliza a criação da máquina remota, mas ainda é necessário acessá-la para efetuar algumas configurações de sistema e para isso será necessária o ip público da máquina. A própria plataforma já o exibe quando acessamos a máquina virtual.
+
+1. Abrimos o Prompt de Comando no Windows e digitamos o comando para acessar a máquina remotamente:
+
+```ps1
+ssh nomeusuario@ip_publico
+```
+
+Onde o **nomeusuario** é o nome de usuário que criamos no processo e o **ip_publico** é o Ip Público da máquina que acabamos de copiar.
+
+- Damos enter.
+
+- Digitamos yes para a pergunta subsequente e novamente precionamos enter para confirmar a opção.
+
+- Digitamos a senha para acessarmos com o usuário da máquina e novamente enter para confirmar.
+
+Deverá aparecer algo como:
+
+```ps1
+nomeusuario: ~$
+```
+
+Isso quer dezer que conseguimos acessar a maquina com sucesso. O próximo passo é atualizar o Ubuntu:
+
+```bash
+$ sudo apt update
+```
+- (enter)
+```bash
+$ sudo apt upgrade
+```
+- (enter)
+
+Agora, atualizar o fuso horário:
+
+> [!NOTE]
+> ```bash
+> $ sudo timedatectl set-timezone America/Sao_Paulo
+> ```
+>
+> Mostrar a data e hora do sistema.
+
+```bash
+$ date
+```
+- (enter)
+
+Vamos alterar a data e hora do nosso servidor no formato mm/dd/yyyy. No caso:
+
+```bash
+$ sudo date -s 10/05/2024
+```
+- (enter)
+
+```bash
+$ date -s 11:33:34
+```
+- (enter)
+
+Reiniciamos o nosso servidor:
+
+```bash
+$ sudo reboot now
+```
+- (enter)
+
+E nos conectamos novamente.
+
+> [!NOTE]
+> Por medidas de segurança, pode ser mais interessante criarmos um novo usuário, adicioná-lo ao grupo SUDO de nosso sitema e seguir os próximos passo com ele. Porém, com o objetivo de manter a compreensão clara, continuaremos com o mesmo usuário desde o ínicio. 
+
+Aqui já deve ter dado para entender que trabalhar com o servidor será como trabalhar com um computador normal. Isso quer dizer que o mesmo processo para criar aplicações, iniciar portas de servidor e chamar funções será exatamente igual no que já foi documentado nos demais diretórios deste projeto e em especial, desta pasta. A diferença é que o servidor se manterá ligado e portanto os serviços se manterão disponíveis.
+
+Mas a seguir, daremos o exemplo de como seria criar um Banco de dados e como configurariamos as variáveis necessárias para acessá-lo remotamente e consumí-lo.
+
+> [!WARNING]
+> Lembre-se, essas informações são sigilosas e devem ser passadas no arquivo **.env** na raiz do projeto que foi préviamente registrado no arquivo **.gitignore**. As informações que serão exibidas a seguir não foram realmente utilizadas neste projeto, elas apenas possuem propósitos ilustrativos.
+
+### Processo de Criação do Banco de Dados
+
+Antes de tudo, iremos baixar três pacotes importantes:
+
+```bash
+$ sudo apt update
+```
+
+```bash
+$ sudo apt install gnupg2 wget nano
+```
+
+> [!NOTE]
+> gnupg2: É uma implementação do GNU Privacy Guard, usada para criptografar e assinar dados e comunicações, oferecendo segurança para suas informações.
+>
+> wget: É uma ferramenta de linha de comando utilizada para baixar arquivos da web. É bastante útil para fazer downloads de arquivos de maneira automatizada.
+>
+> nano: É um editor de texto simples e fácil de usar, que funciona no terminal. É útil para editar arquivos de texto rapidamente.
+
+Agora adicionaremos o PostgreSQL 16 no Repositório do Ubuntu:
+
+```bash
+$ sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt (lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
+```
+
+Importaremos o repositório com chave assinada:
+
+```bash
+$ curl -fsSL https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/postgresql.gpg
+```
+
+Atualizaremos novamente o Ubuntu
+
+```bash
+$ sudo apt update
+```
+
+E agora podemos iniciar de fato a instalação do banco:
+
+```bash
+$ sudo apt install postgresql-16 postgresql-contrib-16
+```
+- Responderemos Y (de yes) para a pergunta subsequente e precionaremos enter.
+
+Agora inicializaremos e habilitaremos o serviço do PostgreSQL:
+
+```bash
+$ sudo systemctl start postgresql
+```
+
+```bash
+$ sudo systemctl enable PostgreSQL
+```
+
+Para verificar se foi instalado a versão 16 corretamente:
+
+```bash
+$ psql --version
+```
+- A versão e o nome do programa deverão aparecer
+
+Agora vamos liberar as conexões remotas:
+
+```bash
+$ sudo nano /etc/postgresql/16/main/postgresql.conf
+```
+
+O nano abrirá o documento de configurações do PostegrSQL e nele devemos encontre a linha **#listen_addresses = 'localhost' # what IP address(es) to listen on;** e reescrevê-la da seguinte maneira:
+
+```nano
+listen_addresses = '*'
+```
+
+Vamos agora configurar o PostgreSQL para autenticação MD5:
+
+```bash
+$ sudo sed -i '/^host/s/ident/md5/' /etc/postgresql/16/main/pg_hba.conf
+```
+
+```bash
+$ sudo sed -i '/^local/s/peer/trust/' /etc/postgresql/16/main/pg_hba.conf
+```
+
+```bash
+$ echo "host all all 0.0.0.0/0 md5" | sudo tee -a /etc/postgresql/16/main/pg_hba.conf
+```
+
+Reiniciamos o serviço:
+
+```bash
+$ sudo systemctl restart PostgreSQL
+```
+
+Liberamos a porta 5432 no firewall:
+
+```bash
+$ sudo ufw allow 5432/tcp
+```
+
+E vamos conectar o Postegres:
+
+```bash
+$ sudo -u postgres psql
+```
+
+> [!NOTE]
+> Se você quiser alterar a senha do usuário padrão do postgres, utilize o seguinte comando:
+>
+> ```bash
+> $ ALTER USER postgres PASSWORD 'VeryStronGPassWord@1137';
+> ```
+
+Você já pode efetuar comando SQL dentro do banco e interagir com ele normalmente.
