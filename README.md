@@ -47,6 +47,27 @@ Caso interessado, você pode encontrar mais sobre essa linguagem nas páginas of
 
 Para mais informações sobre o desenvolvimento do algoritmo, acesse [_cloud/machine-learning/README.md](https://github.com/Leonardo-henriqu2/PI---5-v2/blob/main/_cloud/machine-learning/README.md).
 
+Utilizamos dois tipos de bancos de dados, [SQLite](https://www.sqlite.org/) como local, sendo uma alternativa mais simples para excutar a aplicação em um ambiente de desenvolvimento, e o [PostgreSQL](https://www.postgresql.org/) na nuvem conforme pedido no manual de desenvolvimento do Projeto Integrador. Apesar dessa característica no projeto, ambos os bancos trabalham com a linguagem SQL, portanto o consumo e a manipulação de ambos não será tão diferente.
+
+Para mais,
+
+- [PostgrSQL Documentation Chapter 1. Getting Started](https://www.postgresql.org/docs/current/tutorial-start.html)
+- [SQLite Documentation](https://www.sqlite.org/docs.html)
+- [SQLite Quick Start](https://www.sqlite.org/quickstart.html)
+- Sobre a sintaxe do SQL, você pode acessar o livro [SQL Cookbook](https://downloads.yugabyte.com/marketing-assets/O-Reilly-SQL-Cookbook-2nd-Edition-Final.pdf) de Anthony Molinaro e Robert de Graaf.
+
+Para mais informações sobre o desenvolvimento dos bancos acesse [_cloud/database/README.md]()
+
+Para a nuvem pública, utilizaremos a plataforma **[Microsoft Azure](https://azure.microsoft.com/pt-br/free/search/?ef_id=_k_Cj0KCQjwj4K5BhDYARIsAD1Ly2qNAvAqMQun11hqhgSNtXCGlfExc5r22z3mAFcbeNHCgxIS_qFHUUIaAocMEALw_wcB_k_&OCID=AIDcmmzmnb0182_SEM__k_Cj0KCQjwj4K5BhDYARIsAD1Ly2qNAvAqMQun11hqhgSNtXCGlfExc5r22z3mAFcbeNHCgxIS_qFHUUIaAocMEALw_wcB_k_&gad_source=1&gclid=Cj0KCQjwj4K5BhDYARIsAD1Ly2qNAvAqMQun11hqhgSNtXCGlfExc5r22z3mAFcbeNHCgxIS_qFHUUIaAocMEALw_wcB)**.
+
+Para saber mais:
+
+- [Azure Documentation](https://learn.microsoft.com/en-us/azure/?product=popular)
+- [Introdução ao Azure Quickstart Center](https://learn.microsoft.com/pt-br/azure/azure-portal/azure-portal-quickstart-center)
+- [Azure Serverless Computing Cookbook, Third Edition](https://info.microsoft.com/rs/157-GQE-382/images/Azure%20Serverless%20Computing%20Cookbook.1.pdf)
+
+O processo de configuração da nuvem está documentado em [_cloud/README.md](https://github.com/Leonardo-henriqu2/PI---5-v2/blob/main/_cloud/README.md)
+
 <br/>
 
 ## Instalação da Aplicação
