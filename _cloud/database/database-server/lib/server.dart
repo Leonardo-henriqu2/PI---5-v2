@@ -1,10 +1,10 @@
 import 'package:shelf/shelf.dart';
 import 'package:shelf/shelf_io.dart';
-// import 'database/db.dart';
+import './db.dart';
 
 Future<void> main() async {
-  // final dbService = DatabaseService();
-  // final database = await dbService.database;
+  final dbService = DatabaseService();
+  await dbService.database;
 
   // Configuração do servidor
   var handler = const Pipeline()
