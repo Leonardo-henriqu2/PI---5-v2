@@ -34,7 +34,7 @@ class DatabaseService {
       CREATE TABLE users (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         username CHAR(65) NOT NULL,
-        hashes CHAR(65) NOT NULL
+        hashe CHAR(65) NOT NULL
       )
     ''');
     print('\nTabelas "users" criadas.\n');

@@ -9,15 +9,18 @@
 PI--5-V2/
 ├── _cloud/
 │   └── database/                           
-│       ├── database-server/                # Armazena o servidor do banco de dados
-|       │   ├── lib/                        # Armazena os códigos do servidor
-|       |   │   ├── db.dart                 # Criador do banco de dados
-|       |   │   └── server.dart             # Inicializador do servidor do banco de dados
-|       │   ├── pubspec.lock                # Arquivo de registro de dependências instaladas
-|       │   ├── pubspec.yaml                # Arquivo de gereniamento de dependências
-|       │   └── sqlite3.dill                # Código da biblioteca dinâmica do SQLite
-│       ├── database.db                     # Banco de dados
-│       └── README.md                       # Documentação do projeto
+│       ├── database-server/                    # Armazena o servidor do banco de dados
+|       │   ├── lib/                            # Armazena os códigos do servidor
+│       │   │   ├── controllers/                # Armazenas funções de manipulação do banco
+│       │   │   │   ├── car_controller.dart     # Funções de manipulação da tabela cars
+│       │   │   │   └── user_controller.dart    # Funções de manipulação da tabela users
+|       |   │   ├── db.dart                     # Criador do banco de dados
+|       |   │   └── server.dart                 # Inicializador do servidor do banco de dados
+|       │   ├── pubspec.lock                    # Arquivo de registro de dependências instaladas
+|       │   ├── pubspec.yaml                    # Arquivo de gereniamento de dependências
+|       │   └── sqlite3.dill                    # Código da biblioteca dinâmica do SQLite
+│       ├── database.db                         # Banco de dados
+│       └── README.md                           # Documentação do projeto
 ```
 
 <br/>
@@ -30,11 +33,11 @@ PI--5-V2/
 |----------|--------------------|--------------------------------|
 | id       | INTEGER            | PRIMARY KEY, AUTOINCREMENT     |
 | username | CHAR(65)           | NOT NULL                       |
-| hashes   | CHAR(65)           | NOT NULL                       |
+| hashe    | CHAR(65)           | NOT NULL                       |
 
 #### Exemplo de Dados
 
-| id    | username    | hashes         |
+| id    | username    | hashe          |
 |-------|-------------|----------------|
 | 00001 | brunoMC3    | 3b1c3c5e7b1a8  |
 | 00002 | Luiz Felipe | c4b8f58292e47  |
@@ -66,7 +69,13 @@ PI--5-V2/
 
 ## Executando o Servidor do Banco
 
-Em se terminal, navegue até o diretório database-server e execute o seguinte comando:
+Antes de tudo, instale as dependências necessárias. Navegue pelo terminal até o diretório ``database-server`` e execute o seguinte comando:
+
+```bash
+dart pub get
+```
+
+Após isso você poderá executar o servidor através do comando:
 
 ```bash
 dart run lib/server.dart
