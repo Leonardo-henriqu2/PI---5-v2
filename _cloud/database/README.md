@@ -1,7 +1,7 @@
 > [!WARNING]
-> Projeto em desenvlvimento
+> Armazenaremos neste diretório o banco de dados local SQLite, seus controladores e o inicializador do seu servidor com suas devidas rotas.
 >
-> Armazenaremos neste diretório o banco de dados local SQLite e seus controladores.
+> Este projeto é apenas um exemplo didático e uma alternativa local para se utilizar a aplicação e não deve ser integrado no ambiente de produção.
 
 ## Estrutura do Diretório
 
@@ -63,7 +63,7 @@ PI--5-V2/
 
 | id    | user_id | model                                   | buying      | maint       | doors | persons | lug_boot | safety | class       |
 |-------|---------|-----------------------------------------|-------------|-------------|-------|---------|----------|--------|-------------|
-| 00001 | 00001   | Gwm Haval H6 Gt Suv Cup Esportivo       | Muito alto  | Muito alto  | 2     | 2       | Pequeno  | Baixo  | Inaceitável |
+| 1     | 1       | Gwm Haval H6 Gt Suv Cup Esportivo       | Muito alto  | Muito alto  | 2     | Várias  | Pequeno  | Baixo  | Inaceitável |
 
 <br/>
 
