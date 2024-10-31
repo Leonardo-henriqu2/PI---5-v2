@@ -60,3 +60,6 @@ coverage.xml
 # Temporary files
 *.tmp
 *.temp
+
+# Environment variable file
+.env
