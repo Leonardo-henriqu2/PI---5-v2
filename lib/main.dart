@@ -137,30 +137,48 @@ class PerguntaAleatoria extends StatefulWidget {
 
 class _PerguntaAleatoriaState extends State<PerguntaAleatoria> {
   List<String> perguntas = [
-    'Qual seu principal entretenimento no momento?',
-    'Qual gênero mais te representa?',
-    'Datas de lançamento de seu interesse?',
+    'Quantos integrantes compõe sua família ou usaram o carro no dia-a-dia?',
+    'Você prefere porta-malas?',
+    'O quão o fator segurança no transporte e deslocamento é importante para você?',
+    'Qual a quantidade de portas que você prefere no carro?',
+    'Custos em relação a futuras manutenções:',
+    'Custo de aquisição do carro:'
   ];
 
   Map<String, List<String>> opcoes = {
-    'Qual seu principal entretenimento no momento?': [
-      'Livros',
-      'Filmes',
-      'Series',
-      'Animes'
+    'Quantos integrantes compõe sua família ou usaram o carro no dia-a-dia?': [
+      '2',
+      '4',
+      'mais'
     ],
-    'Qual gênero mais te representa?': [
-      'Ação e Aventura',
-      'Comédia Romântica',
-      'Animações em geral',
-      'Fatos Reais'
+    'Você prefere porta-malas?': [
+      'Pequenos',
+      'Médios',
+      'Grandes'
     ],
-    'Datas de lançamento de seu interesse?': [
-      'anos 90',
-      '2000 a 2009',
-      '2010 a 2019',
-      '2020 a 2024'
+    'O quão o fator segurança no transporte e deslocamento é importante para você?': [
+      'Baixo ',
+      'Médio',
+      'Alto'
     ],
+    'Qual a quantidade de portas que você prefere no carro?': [
+      '2',
+      '3',
+      '4',
+      '5 ou mais'
+    ],
+    'Custos em relação a futuras manutenções:': [
+      'Muito alto',
+      'Alto',
+      'Médio',
+      'Baixo'
+    ],
+    'Custo de aquisição do carro:': [
+      'Muito alto',
+      'Alto',
+      'Médio',
+      'Baixo'
+    ]
   };
 
   late String perguntaSelecionada;
