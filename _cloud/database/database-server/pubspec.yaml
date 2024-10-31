@@ -1,0 +1,9 @@
+name: database_server
+description: Um servidor Dart para gerenciar o banco de dados SQLite.
+environment:
+  sdk: '>=2.12.0 <3.0.0'
+dependencies:
+  sqlite3: ^2.4.7
+  path: ^1.8.0
+  shelf: ^1.4.1
+  shelf_router: ^1.1.0

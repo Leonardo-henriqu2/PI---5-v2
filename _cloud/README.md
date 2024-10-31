@@ -354,3 +354,36 @@ $ sudo -u postgres psql
 > ```
 
 Você já pode efetuar comando SQL dentro do banco e interagir com ele normalmente.
+
+> [!WARNING]
+> É importante deixar claro que para interagir de forma segura com o banco de dados e com o algoritmo, é necessário criar variáveis de ambiente e não compartilhar publicamente suas informações.
+>
+> Exemplo:
+> ```env
+> # URL para interagir com o algoritmo
+> ALGORITHM_URL=http://seu-servidor-na-nuvem:5000/predict
+> 
+> # URL para interagir com o banco de dados PostgreSQL na nuvem
+> DATABASE_URL=postgres://usuario:senha@host:port/nome_do_banco
+> ```
+>
+> E através do pacote dotenv chamar essas variáveis no código:
+> ```dart
+> import 'package:dotenv/dotenv.dart' as dotenv;
+>
+> void main() async {
+>   // Carrega as variáveis do arquivo .env
+>   dotenv.load();
+>
+>   // Acesse as variáveis de ambiente
+>   final algorithmUrl = dotenv.env['ALGORITHM_URL'];
+>   final databaseUrl = dotenv.env['DATABASE_URL'];
+>
+>   print('Algorithm URL: $algorithmUrl');
+>   print('Database URL: $databaseUrl');
+> 
+>   // Resto do código...
+> }
+> ```
+>
+> Verifique se o arquivo .env está inserido no arquivo .gitignore para ser ignorado pelo GitHub.
