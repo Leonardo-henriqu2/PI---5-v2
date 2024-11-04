@@ -15,6 +15,16 @@
 
 2. [Instalação da Aplicação](#instalação-da-aplicação)
 
+   2.1 [Requisitos](#requisitos)
+
+   2.2 [Baixando o Repositório](#baixando-o-repositório)
+
+   2.3 [Executando a Aplicação Localmente](#executando-a-aplicação-localmente)
+
+      2.3.1 [Forma Automatizada](#forma-automatizada)
+
+      2.3.2 [Forma Manual](#forma-manual)
+
 <br/>
 
 ## Introdução
@@ -72,16 +82,83 @@ O processo de configuração da nuvem está documentado em [_cloud/README.md](ht
 
 ## Instalação da Aplicação
 
-Para baixar as dependências da aplicação, use o comando:
+### Requisitos
+
+Ferramenta de versionamento Git, disponível na página oficial [Git Downloads](https://git-scm.com/downloads).
+
+O framework Flutter, juntamente com a linguagem de programação Dart, é essencial para rodar o programa. Siga o processo de instalação e configuração em [Get Started](https://docs.flutter.dev/get-started/install).
+
+Para utilizar o Flutter, você precisará de um emulador mobile. O ambiente escolhido para o desenvolvimento desta aplicação é o Android Studio. Você pode o instalar acessando a página oficial [Instalar o Android Studio](https://developer.android.com/studio/install?hl=pt-br).
+
+Caso opte por usar a versão local do algoritmo de aprendizagem de máquina, será necessário instalar a linguagem de programação Python. Consulte o guia de instalação em [Beginners Guide](https://wiki.python.org/moin/BeginnersGuide/Download).
+
+<br/>
+
+### Baixando o Repositório
+
+Escolha um diretório para poder armazenar os arquivos da aplicação, abra o terminhal Bash do Git nele e execute o seguite comando:
+
+```bash
+git clone https://github.com/Leonardo-henriqu2/PI---5-v2.git
+```
+
+E aguarde o download ser concluido.
+
+<br/>
+
+### Executando a Aplicação Localmente
+> [!WARNING]
+> Lembre-se de ter um dispositivo mobile iniciado para emular o aplicativo. 
+
+#### Forma Automatizada
+
+Para iniciar de uma só vez a aplicação juntamente com os sevidores locais, basta executar um script pré-preparado.
+
+> [!NOTE]
+> Para executar os scripts, recomendamos que você tenha permissão de administrador do sistema.
+
+- **No Windows**:
+    - Clique duas vezes no arquivo **[start_application.bat](./start_application.bat)**.
+
+    - Ou abra o Prompt de Comando do sistema, navegue até o root do projeto e execute o comando:
+  
+      ```cmd
+      start_application.bat
+      ```
+
+- **No Linux**:
+    - Clique duas vezes no arquivo **[start_application.sh](./start_application.sh)**.
+
+    - Ou abra o Prompt de Comando do sistema, navegue até o root do projeto, dê permissão de execução ao script com:
+
+      ```bash
+      chmod +x start_application.sh
+      ```
+
+    - E execute-o com o comando:
+    
+      ```bash
+      ./start_application.sh
+      ```
+
+O primeiro terminal será o principal e através dele você deverá confirmar cada etapa para executar cada servidor.
+
+<br/>
+
+#### Forma Manual
+
+Navegue até o diretório root da aplicação e instale as dependências com o comando:
 
 ```bash
 flutter pub get
 ```
 
+Para iniciar o servidor local Python e utilização do algoritmo de predição, siga as instruções de [_cloud/machine-learning/README.md](https://github.com/Leonardo-henriqu2/PI---5-v2/blob/main/_cloud/machine-learning/README.md).
+
+Para iniciar o servidor local do banco de dados, siga as instruções de [_cloud/database/README.md](https://github.com/Leonardo-henriqu2/PI---5-v2/tree/main/_cloud/database/README.md).
+
 Para executar a aplicação em um emulador, use o comando:
 
-```
+```bash
 flutter run
 ```
-
-Para a inicialização do servidor local de Python e utilização do algoritmo de predição, siga as instruções de [_cloud/machine-learning/README.md](https://github.com/Leonardo-henriqu2/PI---5-v2/blob/main/_cloud/machine-learning/README.md).
