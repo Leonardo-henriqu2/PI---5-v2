@@ -162,3 +162,10 @@ Para executar a aplicação em um emulador, use o comando:
 ```bash
 flutter run
 ```
+<b/>
+
+## Grupo
+
+Leonardo Henrique Bernardes de Souza | 1091392223034
+
+Samuel Luiz Martins dos Santos       | 1091392223033
