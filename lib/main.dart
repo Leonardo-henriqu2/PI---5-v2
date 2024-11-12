@@ -125,17 +125,17 @@ class HomeScreen extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: PerguntaAleatoria(),
+      home: PerguntaSequencial(),
     );
   }
 }
 
-class PerguntaAleatoria extends StatefulWidget {
+class PerguntaSequencial extends StatefulWidget {
   @override
-  _PerguntaAleatoriaState createState() => _PerguntaAleatoriaState();
+  _PerguntaSequencialState createState() => _PerguntaSequencialState();
 }
 
-class _PerguntaAleatoriaState extends State<PerguntaAleatoria> {
+class _PerguntaSequencialState extends State<PerguntaSequencial> {
   List<String> perguntas = [
     'Quantos integrantes compõe sua família ou usaram o carro no dia-a-dia?',
     'Você prefere porta-malas?',
@@ -181,25 +181,31 @@ class _PerguntaAleatoriaState extends State<PerguntaAleatoria> {
     ]
   };
 
-  late String perguntaSelecionada;
+  int indicePerguntaAtual = 0;
   late String respostaSelecionada;
 
   @override
   void initState() {
     super.initState();
-    gerarPerguntaAleatoria();
+    respostaSelecionada = opcoes[perguntas[indicePerguntaAtual]]!.first;
   }
 
-  void gerarPerguntaAleatoria() {
-    final random = Random();
+  void proximaPergunta() {
     setState(() {
-      perguntaSelecionada = perguntas[random.nextInt(perguntas.length)];
-      respostaSelecionada = opcoes[perguntaSelecionada]!.first;
+      if (indicePerguntaAtual < perguntas.length - 1) {
+        indicePerguntaAtual++;
+        respostaSelecionada = opcoes[perguntas[indicePerguntaAtual]]!.first;
+      } else {
+        // Reinicia ou finaliza ao chegar à última pergunta
+        indicePerguntaAtual = 0;
+      }
     });
   }
 
   @override
   Widget build(BuildContext context) {
+    String perguntaAtual = perguntas[indicePerguntaAtual];
+
     return Scaffold(
       appBar: AppBar(
         title: Text('The Cycle está aprendendo sobre você'),
@@ -218,12 +224,12 @@ class _PerguntaAleatoriaState extends State<PerguntaAleatoria> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                perguntaSelecionada,
+                perguntaAtual,
                 style: TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold),
               ),
               SizedBox(height: 20.0),
               Column(
-                children: opcoes[perguntaSelecionada]!.map((opcao) {
+                children: opcoes[perguntaAtual]!.map((opcao) {
                   return RadioListTile<String>(
                     title: Text(opcao),
                     value: opcao,
@@ -261,8 +267,8 @@ class _PerguntaAleatoriaState extends State<PerguntaAleatoria> {
               ),
               SizedBox(height: 20.0),
               ElevatedButton(
-                onPressed: gerarPerguntaAleatoria,
-                child: Text('Nova Pergunta'),
+                onPressed: proximaPergunta,
+                child: Text('Próxima Pergunta'),
               ),
             ],
           ),
@@ -271,7 +277,6 @@ class _PerguntaAleatoriaState extends State<PerguntaAleatoria> {
     );
   }
 }
-
 class CadastroScreen extends StatefulWidget {
   @override
   _CadastroScreenState createState() => _CadastroScreenState();
