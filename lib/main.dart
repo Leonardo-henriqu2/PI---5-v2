@@ -116,6 +116,8 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 }
 
+
+
 class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -190,14 +192,17 @@ class _PerguntaSequencialState extends State<PerguntaSequencial> {
     respostaSelecionada = opcoes[perguntas[indicePerguntaAtual]]!.first;
   }
 
-  void proximaPergunta() {
+  void proximaPerguntaOuFinalizar(BuildContext context) {
     setState(() {
       if (indicePerguntaAtual < perguntas.length - 1) {
         indicePerguntaAtual++;
         respostaSelecionada = opcoes[perguntas[indicePerguntaAtual]]!.first;
       } else {
-        // Reinicia ou finaliza ao chegar à última pergunta
-        indicePerguntaAtual = 0;
+        // Ao finalizar a última pergunta, navegue para a nova tela
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => TelaFinal()),
+        );
       }
     });
   }
@@ -255,6 +260,7 @@ class _PerguntaSequencialState extends State<PerguntaSequencial> {
                           TextButton(
                             onPressed: () {
                               Navigator.of(context).pop();
+                              proximaPerguntaOuFinalizar(context);
                             },
                             child: Text('OK'),
                           ),
@@ -265,11 +271,6 @@ class _PerguntaSequencialState extends State<PerguntaSequencial> {
                 },
                 child: Text('Enviar Resposta'),
               ),
-              SizedBox(height: 20.0),
-              ElevatedButton(
-                onPressed: proximaPergunta,
-                child: Text('Próxima Pergunta'),
-              ),
             ],
           ),
         ),
@@ -277,6 +278,27 @@ class _PerguntaSequencialState extends State<PerguntaSequencial> {
     );
   }
 }
+
+// Nova tela a ser exibida após a última pergunta
+class TelaFinal extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Obrigado!'),
+        backgroundColor: Colors.blue,
+      ),
+      body: Center(
+        child: Text(
+          'Você respondeu todas as perguntas!',
+          style: TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold),
+          textAlign: TextAlign.center,
+        ),
+      ),
+    );
+  }
+}
+
 class CadastroScreen extends StatefulWidget {
   @override
   _CadastroScreenState createState() => _CadastroScreenState();
