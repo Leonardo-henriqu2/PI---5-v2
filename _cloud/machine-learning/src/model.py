@@ -1,8 +1,6 @@
-import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.neural_network import MLPClassifier
-from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay, accuracy_score, classification_report
-import matplotlib.pyplot as plt
+from sklearn.metrics import accuracy_score
 import joblib
 
 # Função para carregar e pré-processar os dados
@@ -33,14 +31,6 @@ def main():
     # Avaliando o modelo
     print('Evaluating the model...\n')
     print('Accuracy:', accuracy_score(y_test, y_pred))
-    # print(classification_report(y_test, y_pred))
-
-    # Calculando e exibindo a matriz de confusão
-    # cm = confusion_matrix(y_test, y_pred, labels=model.classes_)
-    # disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=model.classes_)
-    # disp.plot(cmap=plt.cm.Blues)
-    # plt.title('Matriz de Confusão')
-    # plt.show()
 
     # Salvando o modelo para uso futuro
     print('Saving the model...\n')
