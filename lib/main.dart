@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 void main() => runApp(LoginApp());
 
 class LoginApp extends StatelessWidget {
+  const LoginApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -15,6 +17,8 @@ class LoginApp extends StatelessWidget {
 }
 
 class LoginScreen extends StatefulWidget {
+  const LoginScreen({super.key});
+
   @override
   _LoginScreenState createState() => _LoginScreenState();
 }
@@ -29,7 +33,7 @@ class _LoginScreenState extends State<LoginScreen> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color.fromARGB(255, 209, 209, 209),
-        title: Text('Welcome to The Cycle'),
+        title: const Text('Welcome to The Cycle'),
       ),
       body: Container(
         decoration: const BoxDecoration(
@@ -59,7 +63,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     return null;
                   },
                 ),
-                SizedBox(height: 16.0),
+                const SizedBox(height: 16.0),
                 TextFormField(
                   controller: _passwordController,
                   decoration: const InputDecoration(
@@ -76,7 +80,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     return null;
                   },
                 ),
-                SizedBox(height: 32.0),
+                const SizedBox(height: 32.0),
                 ElevatedButton(
                   onPressed: () {
                     if (_formKey.currentState?.validate() ?? false) {
@@ -87,9 +91,9 @@ class _LoginScreenState extends State<LoginScreen> {
                       );
                     }
                   },
-                  child: Text('Login'),
+                  child: const Text('Login'),
                 ),
-                SizedBox(height: 32.0),
+                const SizedBox(height: 32.0),
                 ElevatedButton(
                   onPressed: () {
                     // Ação de login (validação, autenticação, etc.)
@@ -98,7 +102,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       MaterialPageRoute(builder: (context) => CadastroScreen()),
                     );
                   },
-                  child: Text('Criar conta'),
+                  child: const Text('Criar conta'),
                 ),
               ],
             ),
@@ -119,6 +123,8 @@ class _LoginScreenState extends State<LoginScreen> {
 
 
 class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -133,6 +139,8 @@ class HomeScreen extends StatelessWidget {
 }
 
 class PerguntaSequencial extends StatefulWidget {
+  const PerguntaSequencial({super.key});
+
   @override
   _PerguntaSequencialState createState() => _PerguntaSequencialState();
 }
@@ -213,13 +221,13 @@ class _PerguntaSequencialState extends State<PerguntaSequencial> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('The Cycle está aprendendo sobre você'),
+        title: const Text('The Cycle está aprendendo sobre você'),
         backgroundColor: const Color.fromARGB(255, 223, 209, 209),
       ),
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('assets/images/wallpaper.jpg'),
+            image: AssetImage('assets/images/wallpaper4.jpg'),
             fit: BoxFit.cover,
           ),
         ),
@@ -230,9 +238,9 @@ class _PerguntaSequencialState extends State<PerguntaSequencial> {
             children: [
               Text(
                 perguntaAtual,
-                style: TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold),
+                style: const TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold),
               ),
-              SizedBox(height: 20.0),
+              const SizedBox(height: 20.0),
               Column(
                 children: opcoes[perguntaAtual]!.map((opcao) {
                   return RadioListTile<String>(
@@ -247,14 +255,14 @@ class _PerguntaSequencialState extends State<PerguntaSequencial> {
                   );
                 }).toList(),
               ),
-              SizedBox(height: 20.0),
+              const SizedBox(height: 20.0),
               ElevatedButton(
                 onPressed: () {
                   showDialog(
                     context: context,
                     builder: (context) {
                       return AlertDialog(
-                        title: Text('Resposta Selecionada'),
+                        title: const Text('Resposta Selecionada'),
                         content: Text('Você escolheu: $respostaSelecionada'),
                         actions: [
                           TextButton(
@@ -262,14 +270,14 @@ class _PerguntaSequencialState extends State<PerguntaSequencial> {
                               Navigator.of(context).pop();
                               proximaPerguntaOuFinalizar(context);
                             },
-                            child: Text('OK'),
+                            child: const Text('OK'),
                           ),
                         ],
                       );
                     },
                   );
                 },
-                child: Text('Enviar Resposta'),
+                child: const Text('Enviar Resposta'),
               ),
             ],
           ),
@@ -281,14 +289,16 @@ class _PerguntaSequencialState extends State<PerguntaSequencial> {
 
 // Nova tela a ser exibida após a última pergunta
 class TelaFinal extends StatelessWidget {
+  const TelaFinal({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Obrigado!'),
+        title: const Text('Obrigado!'),
         backgroundColor: Colors.blue,
       ),
-      body: Center(
+      body: const Center(
         child: Text(
           'Você respondeu todas as perguntas!',
           style: TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold),
@@ -300,6 +310,8 @@ class TelaFinal extends StatelessWidget {
 }
 
 class CadastroScreen extends StatefulWidget {
+  const CadastroScreen({super.key});
+
   @override
   _CadastroScreenState createState() => _CadastroScreenState();
 }
@@ -315,7 +327,7 @@ class _CadastroScreenState extends State<CadastroScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Cadastro'),
+        title: const Text('Cadastro'),
       ),
       body: Container(
         decoration: const BoxDecoration(
@@ -347,7 +359,7 @@ class _CadastroScreenState extends State<CadastroScreen> {
                     _nome = value!;
                   },
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 // Campo Email
@@ -374,7 +386,7 @@ class _CadastroScreenState extends State<CadastroScreen> {
                 ),
                 // Campo Senha
 
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 TextFormField(
@@ -398,20 +410,20 @@ class _CadastroScreenState extends State<CadastroScreen> {
                     _senha = value!;
                   },
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 // Botão de Cadastrar
                 ElevatedButton(
                   onPressed: () {
                     if (_formKey.currentState!.validate()) {
                       _formKey.currentState!.save();
                       ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(
+                        const SnackBar(
                             content: Text('Cadastro realizado com sucesso!')),
                       );
                       // Aqui você pode adicionar a lógica para enviar os dados a uma API ou banco de dados.
                     }
                   },
-                  child: Text('Cadastrar'),
+                  child: const Text('Cadastrar'),
                 ),
               ],
             ),
