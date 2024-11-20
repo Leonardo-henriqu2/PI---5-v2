@@ -28,37 +28,37 @@ class PerguntaSequencial extends StatefulWidget {
 
 class _PerguntaSequencialState extends State<PerguntaSequencial> {
   List<String> perguntas = [
-    'Quantos integrantes compõe sua família ou usaram o carro no dia-a-dia?',
-    'Você prefere porta-malas?',
-    'O quão o fator segurança no transporte e deslocamento é importante para você?',
-    'Qual a quantidade de portas que você prefere no carro?',
-    'Custos em relação a futuras manutenções:',
+    'Qual a capacidade máxima de pessoas que seu carro pode transportar?',
+    'Tamanho do porta-malas?',
+    'Qual o nível de segurança',
+    'Quantidade de portas?',
+    'Custos em relação as manutenções:',
     'Custo de aquisição do carro:'
   ];
 
   Map<String, List<String>> opcoes = {
-    'Quantos integrantes compõe sua família ou usaram o carro no dia-a-dia?': [
+    'Qual a capacidade máxima de pessoas que seu carro pode transportar?': [
       '2',
       '4',
       'mais'
     ],
-    'Você prefere porta-malas?': [
+    'Tamanho do porta-malas?': [
       'Pequenos',
       'Médios',
       'Grandes'
     ],
-    'O quão o fator segurança no transporte e deslocamento é importante para você?': [
+    'Qual o nível de segurança': [
       'Baixo ',
       'Médio',
       'Alto'
     ],
-    'Qual a quantidade de portas que você prefere no carro?': [
-      '2',
-      '3',
+    'Quantidade de portas?': [
+      '5 ou mais',
       '4',
-      '5 ou mais'
+      '3',
+      '2'
     ],
-    'Custos em relação a futuras manutenções:': [
+    'Custos em relação as manutenções:': [
       'Muito alto',
       'Alto',
       'Médio',
