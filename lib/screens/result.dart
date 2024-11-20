@@ -41,8 +41,8 @@ class _ResultState extends State<Result> {
         final int carResult = jsonDecode(response.body)['prediction'];
         setState(() {
           resultMessage = carResult == 1
-              ? "unacc"
-              : "acc";
+              ? "good"
+              : "v-good";
           isLoading = false;
         });
       } else {
