@@ -19,17 +19,17 @@ class _ResultState extends State<Result> {
   @override
   void initState() {
     super.initState();
-    _fetchResult();
+    _fetchCars();
   }
 
-  Future<void> _fetchResult() async {
+  Future<void> _fetchCars() async {
     setState(() {
       isLoading = true;
     });
 
     await dotenv.load(fileName: '.env');
 
-    final String apiUrl = dotenv.env['API_URL'] ?? '';
+    final String apiUrl = dotenv.env['ALGORITHM_URL'] ?? '';
     try {
       final response = await http.post(
         Uri.parse(apiUrl),
@@ -38,11 +38,11 @@ class _ResultState extends State<Result> {
       );
 
       if (response.statusCode == 200) {
-        final int diabetesResult = jsonDecode(response.body)['prediction'];
+        final int carResult = jsonDecode(response.body)['prediction'];
         setState(() {
-          resultMessage = diabetesResult == 1
-              ? "Baseado em seus dados, você apresenta ALTO RISCO para diabetes!\nConsidere consultar um médico."
-              : "Baseado em seus dados, você apresenta BAIXO RISCO para diabetes!\nContinue cuidando da sua saúde!";
+          resultMessage = carResult == 1
+              ? "unacc"
+              : "acc";
           isLoading = false;
         });
       } else {
@@ -98,7 +98,7 @@ class _ResultState extends State<Result> {
                         ),
                       ),
                       child: const Text(
-                        'Nova análise',
+                        'Nova avalição',
                         style: TextStyle(fontSize: 16, color: Colors.white),
                       ),
                     ),
