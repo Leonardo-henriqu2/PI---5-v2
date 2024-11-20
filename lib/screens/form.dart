@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/screens/outcome.dart';
+import 'package:flutter_application_1/screens/nameCar.dart';
 
 
 
@@ -90,7 +91,7 @@ class _PerguntaSequencialState extends State<PerguntaSequencial> {
         // Ao finalizar a última pergunta, navegue para a nova tela
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => TelaFinal()),
+          MaterialPageRoute(builder: (context) => Namecar()),
         );
       }
     });
