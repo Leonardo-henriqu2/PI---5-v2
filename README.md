@@ -169,3 +169,7 @@ flutter run
 Leonardo Henrique Bernardes de Souza | 1091392223034
 
 Samuel Luiz Martins dos Santos       | 1091392223033
+
+## Pitch
+
+https://www.youtube.com/watch?v=qSA04KSjeFM
