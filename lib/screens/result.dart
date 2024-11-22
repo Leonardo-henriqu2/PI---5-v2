@@ -38,13 +38,21 @@ class _ResultState extends State<Result> {
       );
 
       if (response.statusCode == 200) {
-        final int carResult = jsonDecode(response.body)['prediction'];
-        setState(() {
-          resultMessage = carResult == 1
-              ? "good"
-              : "v-good";
-          isLoading = false;
-        });
+  final int carResult = jsonDecode(response.body)['prediction'];
+  setState(() {
+    if (carResult == 1) {
+      resultMessage = "good";
+    } else if (carResult == 2) {
+      resultMessage = "v-good";
+    } else if (carResult == 3) {
+      resultMessage = "acc";
+    } else {
+      resultMessage = "unacc";
+    }
+    isLoading = false;
+  });
+}
+
       } else {
         setState(() {
           resultMessage = 'Erro ao obter o resposta.\nTente novamente mais tarde.';
